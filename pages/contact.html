@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Limbad Carbon</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="../assets/img/logo_plain.png" alt="Limbad Carbon Logo">
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="application.html">APPLICATION</a>
+            <a href="products.html">OUR PRODUCT</a>
+            <a href="planet.html">
+                FOR THE PLANET
+                <span class="star-field">
+                    <span class="star s1">✧</span>
+                    <span class="star s2">✧</span>
+                    <span class="star s3">✧</span>
+                    <span class="star s4">✧</span>
+                    <span class="star s5">✧</span>
+                    <span class="star s6">✧</span>
+                    <span class="star s7">✧</span>
+                    <span class="star s8">✧</span>
+                    <span class="star s9">✧</span>
+                    <span class="star s10">✧</span>
+                </span>
+            </a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html" class="active">CONTACT US</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main id="main">
+        <section class="contact section-bg" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>CONTACT US</h2>
+                    <p>How can we Help?</p>
+                </div>
+
+                <div class="contact-layout">
+                    <!-- Left Column -->
+                    <div class="contact-left">
+                        <!-- Address Boxes First -->
+                        <div class="info-boxes">
+                            <!-- Manufacturing Unit Info -->
+                            <div class="info-box">
+                                <h3>Manufacturing Unit</h3>
+                                <p>Limbad Enterprise Pvt. Ltd.<br>
+                                    Industrial Corporation<br>
+                                    Near bhuj GIDC, B Mangatram road<br>
+                                    Bhuj-Kutch, 370001, INDIA</p>
+                                <div class="contact-details">
+                                    <p><strong>Phone:</strong> <a href="tel:+919909825518">+91 9909 825 518</a></p>
+                                    <p><strong>Email:</strong> <a
+                                            href="mailto:info@limbadcarbon.com">info@limbadcarbon.com</a></p>
+                                </div>
+                            </div>
+                            <!-- Sales Office Info -->
+                            <div class="info-box">
+                                <h3>Sales Office</h3>
+                                <p>2250 Kennedy Road<br>
+                                    M1T3G7<br>
+                                    Toronto, ON<br>
+                                    Canada</p>
+                                <div class="contact-details">
+                                    <p><strong>Phone:</strong> <a href="tel:+15196197969">+1 519 619 7969</a></p>
+                                    <p><strong>Email:</strong> <a
+                                            href="mailto:sales@limbadcarbon.com">sales@limbadcarbon.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Section Last -->
+                        <div class="map-section">
+                            <div class="maps-container">
+                                <iframe
+                                    src="https://www.google.com/maps/d/u/0/embed?mid=13u6k2oSOsF31BnxaeqmCjNmJmS9BxCQ&ehbc=2E312F"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="contact-right">
+                        <!-- Form Section -->
+                        <form action="send_email.php" method="post" class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" name="name" id="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" name="phone" id="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Services</label>
+                                <div class="services-grid">
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="water" value="water">
+                                        <label for="water">Water Treatment</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="air" value="air">
+                                        <label for="air">Air & Gas</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="food" value="food">
+                                        <label for="food">Food & Beverage</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="oil" value="oil">
+                                        <label for="oil">Oil & Gas</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="pharma" value="pharma">
+                                        <label for="pharma">Pharma & Medical</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="cosmetic" value="cosmetic">
+                                        <label for="cosmetic">Cosmetic & Care</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="cabin" value="cabin">
+                                        <label for="cabin">Cabin Air Filter</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="mining" value="mining">
+                                        <label for="mining">Gold Mining</label>
+                                    </div>
+                                    <div class="service-option">
+                                        <input type="radio" name="service" id="other" value="other">
+                                        <label for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Call +91 9909 825 518</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@limbadcarbon.com</span>
+                </div>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="application.html">Applications</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="copyright">
+                <p>© 2024 All Rights Reserved. Limbad Carbon</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
