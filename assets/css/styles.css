@@ -97,6 +97,8 @@ nav {
     border: none;
     cursor: pointer;
     padding: 10px;
+    z-index: 1002; /* Increased z-index to stay above mobile nav */
+    position: relative;
 }
 
 .mobile-menu-btn span {
@@ -106,6 +108,19 @@ nav {
     background-color: var(--text-dark);
     margin: 5px 0;
     transition: var(--transition);
+}
+
+/* Mobile menu button active state */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Mobile Navigation */
@@ -118,23 +133,54 @@ nav {
     background-color: white;
     padding: 80px 30px;
     transform: translateX(-100%);
-    transition: var(--transition);
-    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    z-index: 1001;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .mobile-nav.active {
     transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
 
-.mobile-nav a {
-    display: block;
-    font-size: 24px;
-    margin: 20px 0;
-    color: var(--text-dark);
-    text-decoration: none;
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
-/* Rest of your existing nav styles... */
+/* Ensure proper display on mobile */
+@media (max-width: 840px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .mobile-nav a {
+        font-size: 18px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        display: block;
+        color: var(--text-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+        color: var(--primary-color);
+    }
+
+    .mobile-nav a.active {
+        color: var(--primary-color);
+    }
+}
 
 .logo {
     display: flex;
@@ -1674,4 +1720,253 @@ textarea.form-control {
     .impact-statement {
         padding: 40px 30px;
     }
+}
+
+/* Updated Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    nav {
+        padding: 10px 15px;
+        width: 100%;
+    }
+
+    .logo img {
+        height: 45px; /* Smaller logo for mobile */
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        padding-top: 25vh;
+    }
+
+    .hero h1 {
+        font-size: 42px; /* Smaller heading for mobile */
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 24px;
+        padding: 0 15px;
+    }
+
+    /* Products overview adjustments */
+    .products-overview {
+        padding: 60px 0;
+    }
+
+    .products-overview h1 {
+        font-size: 32px;
+        padding: 0 15px;
+    }
+
+    .product-types {
+        padding: 0 15px;
+    }
+
+    .product-type-card {
+        height: 250px; /* Shorter cards for mobile */
+    }
+
+    .product-type-card h4 {
+        font-size: 22px;
+    }
+
+    /* Application section adjustments */
+    .application-card {
+        margin-bottom: 40px;
+    }
+
+    .card-content {
+        padding: 30px 20px;
+    }
+
+    .card-header h2 {
+        font-size: 28px;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding: 40px 15px 30px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Planet page adjustments */
+    .planet-container {
+        margin-top: -60px;
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 15px;
+    }
+
+    .impact-statement {
+        padding: 30px 20px;
+    }
+
+    .impact-statement h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .highlight-text {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .tagline {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Additional breakpoint for smaller phones */
+@media (max-width: 480px) {
+    /* Navigation */
+    .logo img {
+        height: 35px;
+    }
+
+    /* Hero section */
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    /* Products overview */
+    .product-type-card {
+        height: 200px;
+    }
+
+    .product-type-card h4 {
+        font-size: 20px;
+    }
+
+    /* Contact section */
+    .contact-item {
+        padding: 8px 15px;
+    }
+
+    .contact-item span {
+        font-size: 13px;
+    }
+
+    /* Footer */
+    .footer h2 {
+        font-size: 24px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navigation */
+    nav {
+        width: 90%;
+        padding: 15px 25px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    /* Hero section */
+    .hero h1 {
+        font-size: 72px;
+    }
+
+    .hero p {
+        font-size: 30px;
+    }
+
+    /* Products overview */
+    .product-type-card {
+        height: 300px;
+    }
+
+    /* Application cards */
+    .card-content {
+        padding: 40px 30px;
+    }
+
+    /* Contact section */
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/* Fix for mobile menu */
+.mobile-nav {
+    padding-top: 100px; /* Increased padding to account for fixed nav */
+}
+
+.mobile-nav a {
+    font-size: 20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Improved touch targets for mobile */
+.nav-links a,
+.footer-nav a,
+.contact-item,
+.social-links a {
+    padding: 10px;
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix for mobile form elements */
+input,
+textarea,
+select,
+button {
+    font-size: 16px !important; /* Prevents zoom on focus in iOS */
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Improve spacing for mobile */
+.section-content,
+.info-box,
+.contact-form {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Fix for mobile images */
+img {
+    max-width: 100%;
+    height: auto;
 }

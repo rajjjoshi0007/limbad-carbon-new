@@ -27,20 +27,41 @@ document.querySelectorAll('.section-header, .products-grid').forEach((el) => {
 // Mobile menu functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
+const body = document.body;
 
 // Only initialize mobile menu if elements exist
 if (mobileMenuBtn && mobileNav) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event from bubbling up
+        this.classList.toggle('active');
         mobileNav.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
+        body.classList.toggle('menu-open');
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', () => {
+    // Close menu when clicking a link
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuBtn.classList.remove('active');
             mobileNav.classList.remove('active');
-            document.body.classList.remove('no-scroll');
+            body.classList.remove('menu-open');
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (mobileNav.classList.contains('active') && 
+            !mobileNav.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Prevent clicks inside mobile nav from closing it
+    mobileNav.addEventListener('click', function(e) {
+        e.stopPropagation();
     });
 }
 
