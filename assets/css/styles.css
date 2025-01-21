@@ -937,17 +937,17 @@ nav.expanded .logo img {
     100% { opacity: 0; }
 }
 
-/* Position stars in a circular pattern around text */
-.s1 { left: -8px; top: -5px; }
-.s2 { right: -8px; top: -5px; }
-.s3 { left: 40%; top: -8px; }
-.s4 { left: -10px; top: 40%; }
-.s5 { right: -10px; top: 40%; }
-.s6 { left: -8px; bottom: -5px; }
-.s7 { right: -8px; bottom: -5px; }
-.s8 { left: 35%; bottom: -8px; }
-.s9 { left: -12px; top: 15%; }
-.s10 { right: -12px; top: 15%; }
+/* Position stars in a circular pattern around text - adjusted positions */
+.s1 { left: -5px; top: -3px; }
+.s2 { right: -5px; top: -3px; }
+.s3 { left: 30%; top: -5px; }
+.s4 { left: -6px; top: 30%; }
+.s5 { right: -6px; top: 30%; }
+.s6 { left: -5px; bottom: -3px; }
+.s7 { right: -5px; bottom: -3px; }
+.s8 { left: 25%; bottom: -5px; }
+.s9 { left: -8px; top: 15%; }
+.s10 { right: -8px; top: 15%; }
 
 /* Sequential star animations with longer duration */
 .nav-links a[href*="planet"]:hover .s1 { animation: starGlow 6s infinite 0s; }
@@ -2280,4 +2280,28 @@ img {
         padding: 0 15px;
         margin-bottom: 30px;
     }
+}
+
+/* Constant sparkling effect for planet page */
+.planet-page-stars .star {
+    opacity: 0;
+    animation: twinkle-constant 4s infinite; /* Increased from 2s to 4s */
+}
+
+/* Adjusted delays to spread out over longer period */
+.planet-page-stars .s1 { animation-delay: 0.0s; }
+.planet-page-stars .s2 { animation-delay: 0.4s; }
+.planet-page-stars .s3 { animation-delay: 0.8s; }
+.planet-page-stars .s4 { animation-delay: 1.2s; }
+.planet-page-stars .s5 { animation-delay: 1.6s; }
+.planet-page-stars .s6 { animation-delay: 2.0s; }
+.planet-page-stars .s7 { animation-delay: 2.4s; }
+.planet-page-stars .s8 { animation-delay: 2.8s; }
+.planet-page-stars .s9 { animation-delay: 3.2s; }
+.planet-page-stars .s10 { animation-delay: 3.6s; }
+
+@keyframes twinkle-constant {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 0.3; } /* Added middle states for smoother transition */
+    50% { opacity: 0.7; } /* Reduced max opacity for subtlety */
 }
