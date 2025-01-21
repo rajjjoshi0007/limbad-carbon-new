@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+       <!-- Navigation -->
     <nav>
         <div class="logo">
             <img src="../assets/img/logo_plain.png" alt="Limbad Carbon Logo">
@@ -19,7 +19,7 @@
             <a href="../index.html">HOME</a>
             <a href="application.html">APPLICATION</a>
             <a href="products.html">OUR PRODUCT</a>
-            <a href="planet.html">
+            <a href="planet.html" class="active">
                 FOR THE PLANET
                 <span class="star-field">
                     <span class="star s1">✧</span>
@@ -35,7 +35,7 @@
                 </span>
             </a>
             <a href="about.html">ABOUT US</a>
-            <a href="contact.html" class="active">CONTACT US</a>
+            <a href="contact.html">CONTACT US</a>
         </div>
         <button class="mobile-menu-btn">
             <span></span>
@@ -44,7 +44,31 @@
         </button>
     </nav>
 
-    <main id="main">
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <a href="../index.html">HOME</a>
+        <a href="application.html">APPLICATION</a>
+        <a href="products.html">OUR PRODUCT</a>
+        <a href="planet.html" class="active">
+            FOR THE PLANET
+            <span class="star-field">
+                <span class="star s1">✧</span>
+                <span class="star s2">✧</span>
+                <span class="star s3">✧</span>
+                <span class="star s4">✧</span>
+                <span class="star s5">✧</span>
+                <span class="star s6">✧</span>
+                <span class="star s7">✧</span>
+                <span class="star s8">✧</span>
+                <span class="star s9">✧</span>
+                <span class="star s10">✧</span>
+            </span>
+        </a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT US</a>
+    </div>
+
+    <main>
         <section class="contact section-bg" id="contact">
             <div class="container">
                 <div class="section-title">
@@ -209,6 +233,16 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+    </script>
     <script src="../assets/js/main.js"></script>
 </body>
 

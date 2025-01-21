@@ -24,28 +24,39 @@ document.querySelectorAll('.section-header, .products-grid').forEach((el) => {
     observer.observe(el);
 });
 
-// Mobile menu functionality
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileNav = document.querySelector('.mobile-nav');
-
-// Only initialize mobile menu if elements exist
-if (mobileMenuBtn && mobileNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-    });
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-        });
-    });
-}
-
 // Initialize all page functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    if (mobileMenuBtn && mobileNav) {
+        let isMenuOpen = false;
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            
+            // Toggle menu button animation
+            mobileMenuBtn.classList.toggle('active');
+            
+            // Toggle mobile menu visibility
+            mobileNav.style.display = isMenuOpen ? 'block' : 'none';
+            
+            // Toggle body scroll
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking links
+        const links = mobileNav.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('active');
+                mobileNav.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // Scroll down button functionality
     const scrollDownBtn = document.querySelector('.scroll-down');
     if (scrollDownBtn) {
