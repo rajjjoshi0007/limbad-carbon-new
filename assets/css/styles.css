@@ -29,9 +29,9 @@ body {
 /* Navigation */
 nav {
     position: fixed;
-    width: 60%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    left: 0;
+    transform: none;
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
@@ -40,17 +40,14 @@ nav {
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: var(--transition);
-    border-radius: 0 0 20px 20px;
+    border-radius: 0;
     margin-top: 0;
     box-shadow: var(--shadow);
-    transform-origin: center top;
 }
 
 /* Responsive navigation adjustments */
 @media (max-width: 1350px) {
     nav {
-        width: 100%;
-        border-radius: 0;
         padding: 15px 30px;
     }
 
@@ -427,21 +424,6 @@ body.no-scroll {
     color: #333 !important;
 }
 
-/* Expanded nav class for scroll state */
-nav.expanded {
-    width: 100%;
-    left: 0;
-    transform: none;
-    border-radius: 0;
-    margin-top: 0;
-    padding: 20px 50px;
-    transform-origin: center top;
-}
-
-nav.expanded .logo img {
-    height: 70px;
-}
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -745,10 +727,10 @@ nav.expanded .logo img {
 /* Updated Footer Styles */
 .footer {
     background-color: #1a3c40;
-    padding: 60px 20px 40px;
-    text-align: center;
+    padding: 60px 20px 80px;
     position: relative;
     overflow: hidden;
+    text-align: left;
 }
 
 .footer::before {
@@ -764,31 +746,55 @@ nav.expanded .logo img {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    min-height: 400px;
+    padding-right: 340px;
 }
 
 .footer h2 {
     color: white;
     font-size: 2.5rem;
     font-weight: 600;
+    text-wrap-mode: nowrap;
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
+    margin-top: 0;
 }
 
-.footer h2::after {
-    content: '';
+.addresses-right {
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #22c55e;
+    right: 0;
+    top: 0;
+    width: 300px;
+    text-wrap-mode: nowrap;
+    text-align: right;
+    padding-left: 40px;
+    height: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.address-block {
+    margin-bottom: 40px;
+}
+
+.address-block h3 {
+    color: #22c55e;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.address-block p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center */
     gap: 25px;
     margin-bottom: 40px;
 }
@@ -814,15 +820,16 @@ nav.expanded .logo img {
 
 .contact-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center */
     gap: 40px;
-    margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-wrap-mode: nowrap;
     color: white;
     padding: 10px 20px;
     border-radius: 30px;
@@ -847,7 +854,7 @@ nav.expanded .logo img {
 
 .footer-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center */
     gap: 30px;
     margin: 40px 0;
     padding: 20px 0;
@@ -870,6 +877,7 @@ nav.expanded .logo img {
 }
 
 .copyright {
+    text-align: left; /* Changed from center */
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
     margin-top: 30px;
@@ -878,7 +886,11 @@ nav.expanded .logo img {
 /* Responsive Footer */
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 20px 30px;
+        padding: 60px 20px 40px; /* Reset padding for mobile */
+    }
+
+    .footer-content {
+        min-height: auto; /* Remove minimum height on mobile */
     }
 
     .footer h2 {
@@ -887,6 +899,7 @@ nav.expanded .logo img {
 
     .contact-info {
         flex-direction: column;
+        align-items: flex-start; /* Changed from center */
         gap: 15px;
     }
 
@@ -900,15 +913,11 @@ nav.expanded .logo img {
         font-size: 18px;
     }
 
-    .footer-nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 0;
-    }
-
-    .contact-item {
-        width: fit-content;
-        margin: 0 auto;
+    .social-links,
+    .footer-nav,
+    .copyright {
+        justify-content: flex-start;
+        text-align: left;
     }
 }
 
@@ -1575,9 +1584,9 @@ textarea.form-control {
 
 /* Footer CTA Section */
 .footer {
-    background-color: var(--text-dark);
+    background-color: #1a3c40;
     padding: 60px 20px;
-    color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-cta {
@@ -1591,21 +1600,21 @@ textarea.form-control {
 
 .footer-cta h2 {
     font-size: 48px;
-    color: #1a1a1a;
+    color: white;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
 .footer-cta p {
     font-size: 20px;
-    color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
     max-width: 600px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #1a1a1a;
+    background-color: #22c55e;
     color: white;
     padding: 15px 40px;
     border-radius: 30px;
@@ -1616,7 +1625,7 @@ textarea.form-control {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    background-color: #333;
+    background-color: var(--primary-dark);
 }
 
 .footer-logo {
@@ -1873,13 +1882,13 @@ textarea.form-control {
 
     .contact-info {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Changed from center */
         gap: 15px;
     }
 
     .footer-nav {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start; /* Changed from center */
         gap: 20px;
         padding: 15px;
     }
@@ -2001,7 +2010,7 @@ textarea.form-control {
     /* Contact section */
     .contact-info {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start; /* Changed from center */
         gap: 20px;
     }
 }
@@ -2304,4 +2313,18 @@ img {
     0%, 100% { opacity: 0; }
     25%, 75% { opacity: 0.3; } /* Added middle states for smoother transition */
     50% { opacity: 0.7; } /* Reduced max opacity for subtlety */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .addresses-right {
+        position: static;
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+        margin-top: 40px;
+        padding-top: 40px;
+        padding-bottom: 0; /* Reset padding for mobile */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
