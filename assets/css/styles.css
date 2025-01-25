@@ -2373,7 +2373,6 @@ img {
 
 .product-hero {
     position: relative;
-    height: 500px;
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 60px;
@@ -2539,4 +2538,125 @@ img {
     color: var(--text-light);
     font-size: 16px;
     line-height: 1.6;
+}
+
+/* Product Detail Page Responsive Styles */
+
+@media (min-width: 1200px) {
+    .product-hero{
+        height: 400px;
+    }
+}
+@media (max-width: 1024px) {
+    .product-hero {
+        flex-direction: column;
+    }
+
+    .product-hero img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .product-hero-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .applications-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-detail {
+        padding: 10px;
+    }
+
+    .product-hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .product-hero-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .applications-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-features h2,
+    .product-applications h2 {
+        font-size: 1.75rem;
+        margin: 30px 0 20px;
+    }
+
+    .feature h4,
+    .application-item h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .product-hero img {
+        max-height: 300px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+
+    .feature,
+    .application-item {
+        padding: 15px;
+    }
+
+    .feature i,
+    .application-item i {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
 }
