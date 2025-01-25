@@ -806,6 +806,39 @@ body.no-scroll {
     height: 100%;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
+.footer-page-links {
+    position: absolute;
+    right: 350px;
+    top: 0;
+    width: 300px;
+    text-wrap-mode: nowrap;
+    text-align: left;
+    padding-left: 40px;
+    height: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.footer-page-link-text {
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;  /* Added to enable transform */
+    position: relative;  /* Added for underline effect */
+}
+
+.footer-page-link-text:hover {
+    color: #22c55e;
+}
+
+
+.footer-page-link-text:hover::after {
+    width: 100%;
+}
 
 .address-block {
     margin-bottom: 40px;
