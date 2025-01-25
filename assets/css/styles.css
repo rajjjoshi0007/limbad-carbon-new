@@ -545,8 +545,13 @@ body.no-scroll {
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     height: 400px;
+}
+
+.product-type-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .product-type-card::before {
@@ -567,16 +572,12 @@ body.no-scroll {
     border-radius: 15px;
 }
 
-.product-type-card:hover {
-    transform: translateY(-10px);
-}
-
 .product-type-card:hover::before {
     opacity: 1;
 }
 
 .product-type-card .image-container {
-    height: 100%; /* Full height */
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -597,7 +598,7 @@ body.no-scroll {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 15px; /* Increased padding */
+    padding: 15px;
     padding-bottom: 40px;
     background: linear-gradient(
         to top,
@@ -616,10 +617,10 @@ body.no-scroll {
 
 .product-type-card h4 {
     color: white;
-    font-size: 28px; /* Increased font size */
+    font-size: 28px;
     margin-bottom: 20px;
     font-weight: 600;
-    text-align: left; /* Explicit alignment */
+    text-align: left;
 }
 
 .product-type-card p {
@@ -630,7 +631,7 @@ body.no-scroll {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
-    text-align: left; /* Explicit alignment */
+    text-align: left;
 }
 
 .product-type-card:hover p {
@@ -655,6 +656,38 @@ body.no-scroll {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-image-container a {
+    display: block;
+    height: 100%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-image-container a:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-header a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.card-header a:hover {
+    color: var(--primary-color);
+}
+
+.card-header h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
 }
 
 /* Responsive Design */
@@ -821,7 +854,7 @@ body.no-scroll {
 .contact-info {
     display: flex;
     justify-content: flex-start; /* Changed from center */
-    gap: 40px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -1137,18 +1170,6 @@ main {
 /* Adjust first card's top margin */
 .application-card:first-child {
     margin-top: 0;
-}
-
-/* Keep existing application card styles */
-.application-card {
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 40px;
-    margin-bottom: 80px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* About Page Styles */
@@ -2327,4 +2348,195 @@ img {
         padding-bottom: 0; /* Reset padding for mobile */
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+}
+
+/* Product Detail Page Styles */
+.product-detail {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-detail h2 a,
+.product-detail h4 a,
+.product-detail p a,
+.product-detail li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-detail .key-features a,
+.product-detail .applications a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-hero {
+    position: relative;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.product-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.product-hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.product-hero-content p {
+    font-size: 20px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.product-stats {
+    margin-bottom: 60px;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: #f0fdf4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.stat-card h3 {
+    color: var(--text-dark);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.product-features {
+    margin-bottom: 60px;
+}
+
+.product-features h2,
+.product-applications h2 {
+    font-size: 36px;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature i {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature h4 {
+    color: var(--text-dark);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.applications-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.application-item {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.application-item i {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.application-item h4 {
+    color: var(--text-dark);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.application-item p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.6;
 }
