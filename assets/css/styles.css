@@ -856,6 +856,7 @@ body.no-scroll {
     transition: width 0.3s ease;
 }
 
+
 .footer-page-link-text:hover::after {
     width: 100%;
 }
