@@ -450,7 +450,6 @@ body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -470,13 +469,13 @@ body.no-scroll {
 }
 
 .hero h1 {
-    font-size: 100px;
+    font-size: 80px;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 36px;
+    font-size: 28px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -807,6 +806,32 @@ body.no-scroll {
     height: 100%;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+
+.footer-logo img {
+    height: auto;
+    width: 300px;
+}
+
+.footer-contact-section {
+    margin-bottom: 50px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
 .footer-page-links {
     position: absolute;
     right: 350px;
@@ -824,17 +849,12 @@ body.no-scroll {
     margin: 0 0 20px 0;
 }
 
-.footer-page-links h4:last-child {
-    margin-bottom: 0;
-}
-
 .footer-page-link-text {
     color: var(--text-light);
     transition: all 0.3s ease;
     text-decoration: none;
     font-size: 24px;
     font-weight: 800;
-    text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
     position: relative;
@@ -856,7 +876,6 @@ body.no-scroll {
     background-color: #22c55e;
     transition: width 0.3s ease;
 }
-
 
 .footer-page-link-text:hover::after {
     width: 100%;
@@ -931,6 +950,7 @@ body.no-scroll {
     justify-content: flex-start; /* Changed from center */
     gap: 10px;
     flex-wrap: wrap;
+    
 }
 
 .contact-item {
@@ -1020,6 +1040,18 @@ body.no-scroll {
     .copyright {
         justify-content: flex-start;
         text-align: left;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-logo img {
+        width: 200px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
@@ -1676,6 +1708,8 @@ textarea.form-control {
 .footer {
     background-color: #ffffff;
     padding: 60px 20px;
+    padding-bottom: 0px;
+
     color: var(--text-light);
 }
 
@@ -1719,15 +1753,15 @@ textarea.form-control {
 }
 
 .footer-logo {
-    position: absolute;
-    right: 0;
-    top: 50%;
+    position: relative;
+    left: -30px;
+    top: 60px;
     transform: translateY(-50%);
 }
 
 .footer-logo img {
-    height: 100px;
-    width: auto;
+    height: auto;
+    width: 500px;
 }
 
 /* Responsive Footer */
@@ -1746,7 +1780,7 @@ textarea.form-control {
     }
 
     .footer-logo {
-        position: static;
+        position: relative;
         transform: none;
         margin-top: 30px;
     }
