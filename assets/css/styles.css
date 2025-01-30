@@ -7,8 +7,8 @@
 }
 
 :root {
-    --primary-color: #22c55e;
-    --primary-dark: #1ea550;
+    --primary-color: #189847;
+    --primary-dark: #188640;
     --text-dark: #1a3c40;
     --text-light: #555;
     --bg-light: #f8f9fa;
@@ -149,13 +149,13 @@ nav {
 }
 
 .mobile-nav a.active {
-    color: #22c55e;
+    color: var(--primary-color);
     background-color: rgba(34, 197, 94, 0.05);
 }
 
 /* Planet link special styling */
 .mobile-nav a[href*="planet"] {
-    color: #22c55e;
+    color: var(--primary-color);
     padding: 15px 20px;
 }
 
@@ -773,7 +773,7 @@ body.no-scroll {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #22c55e, #3b82f6, #22c55e);
+    background: linear-gradient(90deg, var(--primary-color), #3b82f6, var(--primary-color));
 }
 
 .footer-content {
@@ -862,7 +862,7 @@ body.no-scroll {
 }
 
 .footer-page-link-text:hover {
-    color: #22c55e;
+    color: var(--primary-color);
     transform: translateX(10px);
 }
 
@@ -873,7 +873,7 @@ body.no-scroll {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #22c55e;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -912,7 +912,7 @@ body.no-scroll {
 }
 
 .address-block h3 {
-    color: #22c55e;
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 30px;
     font-weight: 600;
@@ -941,7 +941,7 @@ body.no-scroll {
 }
 
 .social-links a:hover {
-    background-color: #22c55e;
+    background-color: var(--primary-color);
     transform: translateY(-3px);
 }
 
@@ -972,7 +972,7 @@ body.no-scroll {
 
 .contact-item i {
     font-size: 18px;
-    color: #22c55e;
+    color: var(--primary-color);
 }
 
 .contact-item span {
@@ -1001,7 +1001,7 @@ body.no-scroll {
 }
 
 .footer-nav a:hover {
-    color: #22c55e;
+    color: var(--primary-color);
 }
 
 .copyright {
@@ -1199,7 +1199,7 @@ body.no-scroll {
 }
 
 .list-title {
-    color: #22c55e;
+    color: var(--primary-color);
     font-size: 18px;
     margin-bottom: 15px;
     font-weight: 600;
@@ -1214,7 +1214,7 @@ ul li {
 
 ul li::before {
     content: "✓";
-    color: #22c55e;
+    color: var(--primary-color);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -1738,7 +1738,7 @@ textarea.form-control {
 
 .cta-button {
     display: inline-block;
-    background-color: #22c55e;
+    background-color: var(--primary-color);
     color: white;
     padding: 15px 40px;
     border-radius: 30px;
@@ -1822,7 +1822,7 @@ textarea.form-control {
 
 .tree-icon {
     font-size: 5rem;
-    color: #22c55e;
+    color: var(--primary-color);
     margin-bottom: 30px;
     animation: floatIcon 3s ease-in-out infinite;
 }
@@ -1846,7 +1846,7 @@ textarea.form-control {
 }
 
 .highlight-text span {
-    color: #22c55e;
+    color: var(--primary-color);
     position: relative;
     display: inline-block;
     padding: 0 10px;
@@ -1875,7 +1875,7 @@ textarea.form-control {
 .cta-button {
     display: inline-block;
     padding: 20px 50px;
-    background: linear-gradient(90deg, #22c55e, #3b82f6);
+    background: linear-gradient(90deg, var(--primary-color), #3b82f6);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -2255,7 +2255,7 @@ img {
         font-size: 18px;
         margin-bottom: 12px;
         text-align: center;
-        color: #22c55e;
+        color: var(--primary-color);
     }
 
     ul li {
