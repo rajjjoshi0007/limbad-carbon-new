@@ -773,7 +773,7 @@ body.no-scroll {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), #3b82f6, var(--primary-color));
+    background: var(--primary-color);
 }
 
 .footer-content {
